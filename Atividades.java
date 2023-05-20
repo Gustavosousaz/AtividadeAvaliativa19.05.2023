@@ -43,13 +43,13 @@ public class Atividades {
         }
         for (int i = 0; i < linhas; i++) {
             for (int j = 0; j < colunas; j++) {
-            if (i>j){
-                matriz[i][j] = 1;
-               } else  if (i == j) {
-                matriz [i][j] = 0;
-               } else {
-                matriz [i][j] =2;
-               }
+                if (i > j) {
+                    matriz[i][j] = 1;
+                } else if (i == j) {
+                    matriz[i][j] = 0;
+                } else {
+                    matriz[i][j] = 2;
+                }
             }
         }
 
@@ -59,20 +59,36 @@ public class Atividades {
                 System.out.print(matriz[i][j] + " ");
             }
             System.out.println();
+        }
     }
-    }
-    
-    
+
     // 2. Cria uma classe que:
     // Sortear um número de 0 a 1000 (dica: usar Math.random())
-    // Pedir um palpite ao usuário. Se ele errar, informar se o palpite é maior ou menor do que o número sorteado. 
-    // Pedir novos palpites até que o usuário acerte e, depois disso, mostrar em quantas tentativas ele acertou. 
+    // Pedir um palpite ao usuário. Se ele errar, informar se o palpite é maior ou
+    // menor do que o número sorteado.
+    // Pedir novos palpites até que o usuário acerte e, depois disso, mostrar em
+    // quantas tentativas ele acertou.
 
-public void Atividade2() {
-    
+    public void Atividade2() {
+
+        // Sortear um numero de 0 a 1000
+        int nDigitado = 0;
+        int tentativas = 1;
+        int nSorteado = (rd.nextInt(5));
+        boolean acertou = false;
+        while (acertou == false) {
+            System.out.println("Digite o numero novamente ");
+            nDigitado = sc.nextInt();
+            if (nSorteado == nDigitado) {
+                System.out.println("Parabéns! Você acertou o número sorteado em " + tentativas + " tentativa.");
+                acertou = true;
+            } else if (nDigitado < nSorteado) {
+                System.out.println("o Numero sorteado e menor que o numero Digitado!");
+            } else {
+                System.out.println("o Numero sorteado e maior que o numero Digitado!");
+            }
+
+            tentativas++;
+        }
+    }
 }
-
-}
-
-
-
